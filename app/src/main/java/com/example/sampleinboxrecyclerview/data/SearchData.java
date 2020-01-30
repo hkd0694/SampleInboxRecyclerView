@@ -14,6 +14,17 @@ public class SearchData {
     @DrawableRes private int profile;
     //private String location;
 
+    public SearchData(){
+
+    }
+
+    public SearchData(int id, String name, String distance, int profile) {
+        this.id = id;
+        this.name = name;
+        this.distance = distance;
+        this.profile = profile;
+    }
+
     public int getId() {
         return id;
     }
@@ -44,28 +55,6 @@ public class SearchData {
 
     public void setProfile(int profile) {
         this.profile = profile;
-    }
-
-    /*public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
-    }*/
-
-    static class ItemDiffer extends DiffUtil.ItemCallback<SearchData> {
-
-        @Override
-        public boolean areItemsTheSame(@NonNull SearchData oldItem, @NonNull SearchData newItem) {
-            return oldItem.getId() == newItem.getId();
-        }
-
-        @Override
-        @SuppressLint("DiffUtilEquals")
-        public boolean areContentsTheSame(SearchData oldItem, SearchData newItem) {
-            return oldItem.equals(newItem);
-        }
     }
 
 }
